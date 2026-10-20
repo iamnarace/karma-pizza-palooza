@@ -1,69 +1,43 @@
-# Welcome to your Lovable project
+# Karma Pizza
 
-## Project info
+A single-page restaurant website prototype (hero, about, menu, location, contact form), generated with [Lovable](https://lovable.dev) and committed to this repository by Lovable's bot.
 
-**URL**: https://lovable.dev/projects/1d9b4baf-951b-4fb8-bd07-34b4260055a7
+> **Status: prototype, not maintained.** Last updated March 2025. The menu, address and email shown in the site are placeholder content, and the contact form is simulated. Do not deploy it as-is (see [Security](#security)).
 
-## How can I edit this code?
+## What it contains
 
-There are several ways of editing your application.
+- Sections: navigation, hero, about, menu, location, contact form, footer (`src/components/`).
+- A sample menu with invented dishes and prices (`src/components/Menu.tsx`).
+- A contact form that only shows a confirmation message; it does **not** send or store anything (`src/components/ContactForm.tsx`).
 
-**Use Lovable**
+## Tech stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1d9b4baf-951b-4fb8-bd07-34b4260055a7) and start prompting.
+Vite, React, TypeScript, Tailwind CSS, shadcn/ui (Radix UI), React Router, TanStack Query.
 
-Changes made via Lovable will be committed automatically to this repo.
+## Run it
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Requires Node.js and npm.
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+npm ci
+npm run dev       # local development server
+npm run build     # production build into dist/
+npm run lint      # ESLint
 ```
 
-**Edit a file directly in GitHub**
+There is no automated test suite.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Verified state (2026-10-20)
 
-**Use GitHub Codespaces**
+- `npm ci` and `npm run build` succeed.
+- `npm run lint` reports 3 errors and 10 warnings that predate this README.
+- No CI workflow is configured.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Security
 
-## What technologies are used for this project?
+- No secrets or backend are used.
+- The dependencies have not been updated since the project was generated. `npm audit --omit=dev` reported 20 advisories on 2026-10-20 (17 high, 3 moderate), including `react-router` and `lodash`. Update the dependencies before any real use.
 
-This project is built with .
+## Licence
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/1d9b4baf-951b-4fb8-bd07-34b4260055a7) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+No licence has been selected, so default copyright applies. Contact the repository owner before reusing the code.
